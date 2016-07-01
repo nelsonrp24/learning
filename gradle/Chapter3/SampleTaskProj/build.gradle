@@ -1,0 +1,14 @@
+apply plugin: 'groovy'
+apply plugin: 'eclipse'
+
+
+version=1.0 // to generate jar with version
+
+dependencies {
+	compile gradleApi() // It creates dependency on the API of current
+    	Gradle version
+   	compile localGroovy() // it will use the Groovy shipped with
+     	Gradle
+   	// these dependencies comes along with groovy plugin
+}
+

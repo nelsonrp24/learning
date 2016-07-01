@@ -1,0 +1,12 @@
+def builder =  new groovy.xml.MarkupBuilder(new FileWriter("orders.xml"))
+
+builder.orders {
+	order{
+		numero("1")
+		description("test1")
+		customer{
+			name("Fulano1")
+			email("Fulano1@whatever.com")
+		}
+	}
+}

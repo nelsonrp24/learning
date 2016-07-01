@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="ch6.login.LoginTest4" tests="2" skipped="0" failures="0" errors="0" timestamp="2016-05-19T18:04:03" hostname="NI-PC-046.local" time="0.002">
+  <properties/>
+  <testcase name="testUserNameNotNull" classname="ch6.login.LoginTest4" time="0.001"/>
+  <testcase name="testUserName" classname="ch6.login.LoginTest4" time="0.0"/>
+  <system-out><![CDATA[@BeforeClass - oneTimeSetUp
+LoginTest: Testing Login 2
+LoginTest: Testing Login 
+@AfterClass - oneTimeTearDown
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

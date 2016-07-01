@@ -1,0 +1,16 @@
+
+println "In configuration phase...."
+
+task helloGradle << {
+         println 'Hello Gradle- This is your first script'
+}
+
+task failedTask << {
+         assert 1==1
+}
+   task test(dependsOn: helloGradle ) << {
+         println 'Test case executed'
+}
+
+
+	

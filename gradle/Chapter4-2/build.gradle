@@ -1,0 +1,21 @@
+buildscript {
+	repositories {
+       		flatDir {dirs "../Chapter4/build/libs/"}
+     	}
+   	dependencies {
+     		classpath group: 'ch4.custom.plugin', name:'Chapter4',version: '1.0'
+   	}	
+}
+
+apply plugin: 'fileplugin'
+
+println "Desde: $project.name"
+
+
+copy.doLast {
+	println "XXXXXXXXXX ------> This is from project $project.name"
+}
+
+filePluginExtension {
+	sourceFile = "/home/user1"
+}

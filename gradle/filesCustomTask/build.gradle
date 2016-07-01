@@ -1,0 +1,39 @@
+import org.gradle.api.Plugin
+import org.gradle.api.Project
+
+apply plugin: GreetingPlugin
+
+greeting {
+    message = 'PutaLaWea'
+    greeter 'Gradle'
+    destination "$buildDir/hello.txt"
+}
+
+task sayGreeting(dependsOn: greet) << {
+    println "Plugin executed....!!!!"
+}
+
+class GreetingPlugin implements Plugin<Project> {
+	void apply (Project project) {
+		project.extensions.create("greeting", GreetingToFileTaskExtension)
+		project.task("greet", type: GreetingToFileTask)
+	}
+}
+
+class GreetingToFileTask extends DefaultTask {
+    
+    @TaskAction
+    def greet() {
+        def file = new File("${project.greeting.destination}")
+	println "This is greeter: ${project.greeting.greeter}"
+        file.parentFile.mkdirs()
+        file.write "${project.greeting.message}"
+    }
+}
+
+class GreetingToFileTaskExtension {
+    String message
+    String greeter
+    String destination
+}
+

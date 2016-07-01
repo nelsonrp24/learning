@@ -1,0 +1,10 @@
+<orders>
+  <order>
+    <numero>1</numero>
+    <description>test1</description>
+    <customer>
+      <name>Fulano1</name>
+      <email>Fulano1@whatever.com</email>
+    </customer>
+  </order>
+</orders>

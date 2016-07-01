@@ -1,0 +1,23 @@
+buildscript {
+    repositories {
+      flatDir {dirs "/var/tmp/"}
+    }
+  dependencies {
+    classpath group: 'com.test.plugin', name: 'filesCustomTask2',version: '1.0'
+  }
+}
+
+
+apply plugin: 'Greeting'
+
+greeting {
+    message 'Hello to everybody.....!!!!!'
+    greeter 'Gradle'
+    destination "$buildDir/hello.txt"
+}
+
+task sayGreeting(dependsOn: greet) << {
+    println "Plugin executed....!!!!"
+}
+
+
